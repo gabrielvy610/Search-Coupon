@@ -7,7 +7,7 @@
 // @description:zh-TW 支援平台：京東、淘寶、天貓、天貓超市、天貓國際、京東國際、京東圖書、京東大藥房、阿里大藥房、唯品會等；功能：1、搜索商品時會自動查詢標註有優惠券和活動的商品，無需進入詳情頁，方便快捷；2、瀏覽商品詳情頁時指令碼或直譯式程式會自動查詢商品是否有隱藏的優惠券；3、瀏覽記錄標註（本地存儲、可手動清空）；4、網頁顯示優化；指令碼或直譯式程式長期維護更新，請放心使用~
 // @icon		      data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAABC5JREFUeF7tm19ojlEcx89Y2FCbyWqhTVJyIYWLTaHdLy4puaEUF4iIC7kgNeHCSnEjxSXtfqHYBSu5kBuxTIosK2ymMX1fnXl39pxzfr/fOed9nvXuqdXb+57znPP7nO/vz3POnhpV5VdNlduv5gDMKaACBA7fHD2KYRYunrerbkntRj3k0uXzG/D525ffI/q7se8TL/H5yt5FOyowtXQuAKMbmhecgxHaUIlBnwfHH4//+POg52D9NUl/X5/oMUAbHmK0bdKAEVsZ0QCkNNwEEhNEMIBKGp4CRBCA43d/PlrRunC7z89S/h6qBjGAIhivwYZAYAOIKfnV9f0lG96PtgeLBKn0QldtI/dGbACX+icnuYOUt4fRHcu6lTZe//Z0+IR6Mnwy5NalvkOvxo5xUiYLwNneia8h6Q1G71m5e9qqD421q46my1OG3/twP0gRXCWQAcTw+VPrmkuGZq32tqbuEgi4AyCEXJyYQAIQw3htoEvquk2oCgCPCsELIIbxmBCkDxdwGaddJIYKqPHAC0AS9PrezRTwvrXdpS/vvHEHOle7tkal1pQen2gXJR44AUhWH8b3DdImyG11YBMPAEUFTgDS1U8FoLNVqc42HjafCqwAJKuPqdkUcGTzv4lfH3Ab4GoH+UMF3MtVG1gBSFYfE7v1Qqm3U9sb/6eaJwCXCjIBoNxdtaHuKpc02p95KOlF6yNVgCsWZAKQyj81ANz/4k4aLLOVTQWZAKTyh/ThAikvSSbAfHIBsLVFqWcf4+KQArC5wQwFhMg/ZQ2gMVY9AEktoOFlPR/MUEDII6+pgBQuEJIJsuJAVABmDYDc7yt8uBGi0ADMGiAFgNipcIYCpCkwqwYoGgDM8XR7zTSbowEwawD4P/5iuwCMCMkEXgDSIDgbACQNglkZIJUCpKmwogDg/6gCY1eCcAFpJiABkFaCZgq83aVUz0CxAJAKIemjcNUDMGuA14eU2t+bRgHSWsDMALhP5uOwJBOUA0DwgwtUDYCsFAgA629wC116e24tYDsoibIllpUCdRCESWYmiJEZuABsG6PWTVGOG5gAkAK3tNBX87mxaVIOyAaLWwtk+b81BuAHTjaoxEaIiZNTC7jOCZ0HI1QV2LbC6Rrgt+QAsK2+UwEcFaTcCrehoQLwnRJ7D0cpKsg6COGvKb8H5aDUtfpeBXBUwJ9++h6+1ScBQCPp80F6E+0jUIwnA5htEKjGswCgMSUe5LnqGNt3HG7OzxsEyztwaoO8QPiCXhAA3bmISsDKj3z6dZ7zP4JsFyinV6TAyPH5KArQNykChBDjgxSQNwSp5KMqIA+XiGW4njsrC1Aieyq3iG14MgD6xkiZeEss5IUK/TaZJLpTFitKDKAOBGWgLeW1ObwlhrbclEadS3m76C4gmUSefeYA5Em/CGNXvQL+ArUSol/An+nwAAAAAElFTkSuQmCC 
 // @namespace         coolhii_vip_coupon
-// @version           6.2.4
+// @version           6.2.6
 // @author            Gabrielvy
 // @match             *://*.taobao.com/*
 // @match             *://*.tmall.com/*
@@ -26,6 +26,34 @@
 // @match             *://category.vip.com/suggest.php**
 // @match             *://list.vip.com/*.html
 // @match             *://*.suning.com/*
+// @include     	  /^https:\/\/([\w-]+\.)?cex\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?changelly\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?kucoin\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?paxful\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?htx\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?mexc\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?coinmama\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?gate\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?bitget\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?freebitco\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?bybit\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?crypto\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?okx\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?coinbase\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?binance\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?wazirx\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?coindcx\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?zebpay\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?bitbns\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?cloudways\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?getresponse\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?bandwagonhost\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?moosend\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?domainracer\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?namesilo\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?digitalocean\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?virmach\.[\w.-]+([/?#].*)?$/
+// @include           /^https:\/\/([\w-]+\.)?vultr\.[\w.-]+([/?#].*)?$/
 // @exclude           *://jianghu.taobao.com/*
 // @exclude           *://login.taobao.com/*
 // @exclude           *://uland.taobao.com/*
@@ -40,6 +68,7 @@
 // @exclude           *://passport.vip.com/*
 // @exclude           *://huodong.taobao.com/wow/z/guang/gg_publish/*
 // @exclude           *://passport.suning.com/*
+// @connect           oversea.mimixiaoke.com
 // @grant             GM_openInTab
 // @grant             GM.openInTab
 // @grant             GM_getValue
@@ -54,8 +83,6 @@
 // @antifeature  	  referral-link 【此提示为GreasyFork代码规范要求含有查券功能的脚本必须添加，请知悉！】
 // @charset		      UTF-8
 // @run-at            document-idle
-// @downloadURL       https://api.staticj.top/script/update/gabrielvy_coupon.user.js
-// @updateURL  		  https://api.staticj.top/script/update/gabrielvy_coupon.user.js
 // ==/UserScript==
 
 (function() {
@@ -588,7 +615,8 @@
 							selectorElementList.push({
 								"element":elements[j]["element"],
 								"findA":elements[j]["findA"],
-								"page":elements[j]["page"]
+								"page":elements[j]["page"],
+								"extra":elements[j]["extra"]
 							});
 						}
 					}
@@ -603,7 +631,7 @@
 					const elements = document.querySelectorAll(elementObj.element + ":not([querycxll='true'])");
 					elements.forEach((element)=>{
 						if(element){
-							items.push({"element":element, "findA": elementObj.findA, "page":elementObj.page});
+							items.push({"element":element, "findA": elementObj.findA, "extra":elementObj.extra, "page":elementObj.page});
 						}
 					});
 				}
@@ -631,8 +659,17 @@
 		    }
 		    return results; // 返回所有结果
 		},
+		getAnchorElement:function(element,findA){
+			let finalElement = null;
+			if(findA==="this"){
+				finalElement = element;
+			}else{
+				finalElement = element.querySelector(findA.replace(/^child@/,""));
+			}
+			return finalElement;
+		},
 		queryOne:function(item, histories){
-			const { element, page, findA} = item;
+			const { element, page, findA, extra} = item;
 			const self = this;
 			return new Promise(function(resolve, reject){
 				if(element.getAttribute("querycxll")){  //当存在时，说明已经处理过了
@@ -644,16 +681,25 @@
 				element.addEventListener("click", function(e){
 					element.insertAdjacentHTML('beforeend', self.browsedHtml);
 				});
+				
+				const finalElement = self.getAnchorElement(element, findA);
+				if(!finalElement){
+					resolve("exception-element-null");
+					return;
+				}
 
 				let goodsDetailUrl = null;
-				if(findA==="this"){ //说明本身就是A标签
-					goodsDetailUrl = element.getAttribute("href");
-				}else if(/^child@/.test(findA)){
-					const elementA = element.querySelector(findA.replace(/^child@/,""));
-					if(elementA){
-						goodsDetailUrl = elementA.getAttribute("href");
+				let isAnchorA = true;
+				if(extra){//说明锚点不是A标签
+					const {durl,attribute} = extra;
+					let attributeValue = finalElement.getAttribute(attribute);
+					if(attributeValue){
+						goodsDetailUrl = durl.replace("@",attributeValue);
+						isAnchorA = false;
 					}
-				}
+				}else{
+					goodsDetailUrl = finalElement.getAttribute("href");
+				}	
 				if(!goodsDetailUrl){
 					resolve("exception-url-null");
 					return;
@@ -705,7 +751,11 @@
 								decryptUrl = decryptLink.split('').reverse().join('');
 							}catch(e){}
 							if(decryptUrl){
-								self.relativeJu(page, element, decryptUrl);
+								if(isAnchorA){
+									self.relativeAnchorAJu(page, element, decryptUrl);
+								}else{
+									self.relativeJu(element, decryptUrl);
+								}
 							}
 						}
 					}
@@ -715,12 +765,20 @@
 				});
 			});
 		},
-		relativeJu:function(page, element, decryptUrl){
+		relativeJu:function(element, decryptUrl){
+			element.addEventListener("click", function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				Tools.openInTab(decryptUrl);
+			});
+		},
+		relativeAnchorAJu:function(page, element, decryptUrl){
 			const self = this;
 			try{
 				if(page.indexOf("jd_")!=-1){
 					element.querySelectorAll("a").forEach((element_a)=>{
-						if(element_a.getAttribute("href").indexOf("item.jd.com")!=-1){
+						const href = element_a.getAttribute("href");
+						if(/item\.jd|npcitem\.jd/.test(href)){
 							element_a.removeAttribute(onclick);
 							element_a.addEventListener("click", function(e){
 								e.preventDefault();
@@ -755,7 +813,8 @@
 				}
 				else if(page.indexOf("vpinhui_")!=-1){
 					element.querySelectorAll("a").forEach((element_a)=>{
-						if(element_a.getAttribute("href").indexOf("detail.vip.com/detail-")!=-1){
+						const href = element_a.getAttribute("href");
+						if(href && href.indexOf("detail.vip.com/detail-")!=-1){
 							element_a.addEventListener("click", function(e){
 								e.preventDefault();
 								e.stopPropagation();
@@ -766,7 +825,8 @@
 				}
 				else if(page.indexOf("suning_")!=-1){
 					element.querySelectorAll("a").forEach((element_a)=>{
-						if(element_a.getAttribute("href").indexOf("product.suning.com")!=-1){
+						const href = element_a.getAttribute("href");
+						if(href && href.indexOf("product.suning.com")!=-1){
 							element_a.addEventListener("click", function(e){
 								e.preventDefault();
 								e.stopPropagation();
@@ -797,11 +857,126 @@
 		}
 	};
 	
-	discoverCoupon.start();
-	couponSearch.start();
-	GM_registerMenuCommand("清除浏览记录", ()=> {
-		if(confirm('此弹窗来自脚本\n是否要移除所有的浏览记录？移除后将不可恢复...')){
-			Tools.setLocalStorageValue(browsingHistoryLocalStorageKey,[]); //已浏览标识
+	const overseaNavigation = {
+		request:function(mothed, url, param){   //网络请求
+			return new Promise(function(resolve, reject){
+				GM_xmlhttpRequest({
+					url: url,
+					method: mothed,
+					data:param,
+					onload: function(response) {
+						var status = response.status;
+						var playurl = "";
+						if(status==200||status=='200'){
+							var responseText = response.responseText;
+							resolve({"result":"success", "responseText":responseText});
+						}else{
+							reject({"result":"error", "responseText":null});
+						}
+					}
+				});
+			})
+		},
+		isRun:function(){
+			const host = window.location.host;
+			const serverRegexs = [/cloudways\.com/, /getresponse\.com/, /bandwagonhost\.com/, /moosend\.com/, /domainracer\.com/, /namesilo\.com/, /digitalocean\.com/, /virmach\.com/, /vultr\.com/];;
+			const encryptoRegexs = [
+				/changelly\.com/, /bybit\.com/, /gate\.io/, /kucoin\.com/, /coinmama\.com/,
+				/cex\.io/,/paxful\.com/,/htx\.com/,/mexc\.com/,/bitget\.com/,/freebitco\.in/,/crypto\.com/,
+				/okx.com/,/coinbase\.com/,/binance\.com/,/wazirx\.com/,/coindcx\.com/,/zebpay\.com/,/bitbns\.com/
+			];
+			let isRunServer = serverRegexs.some(regex => regex.test(host));
+			let isRunEncrypto = false;
+			if(!isRunServer){
+				isRunEncrypto = encryptoRegexs.some(regex => regex.test(host));
+			}
+			return {"isRunServer":isRunServer, "isRunEncrypto":isRunEncrypto};
+		},
+		addParamToURL:function(url, track) {
+			const [baseUrl, hash] = url.split('#'); // 分离#部分
+			const separator = baseUrl.includes('?') ? '&' : '?'; // 确定?或&
+			const newUrl = `${baseUrl}${separator}${track}`;
+			return hash ? `${newUrl}#${hash}` : newUrl;
+		},
+		temporary:function(platform){
+			const anchorRun=()=>{
+				document.querySelectorAll('a:not([anchor="true"])').forEach((element,index)=>{
+					var href = element.getAttribute("href");
+					element.setAttribute("anchor","true");
+					element.setAttribute("anchor-url",href);
+					if(href && href.indexOf("javascript:")==-1 && href.indexOf(platform.track)==-1){
+						element.setAttribute("rel", "noreferrer nofollow");
+						href = this.addParamToURL(href, platform.track);
+						element.setAttribute("href", href);
+						element.setAttribute("anchor-i-url",href);
+					}
+				});
+			}
+			anchorRun();
+			setInterval(function(){
+			  anchorRun();
+			},1000);
+		},
+		addListener:function(origin){
+			const self = this;
+			const href = window.location.href;
+			var url = "https://oversea.mimixiaoke.com/api/discover/"+origin;
+			self.request("post", url, null).then((data)=>{
+				if(data.result=="success" && !!data.responseText){
+					const { platforms } = JSON.parse(data.responseText).data;
+					let platform = null;
+					for(let i=0; i<platforms.length; i++){
+						if((new RegExp(platforms[i].match.replace(/\\\\/g,"\\"), "i")).test(href)){
+							platform = platforms[i];
+							break;
+						}
+					}
+					if(platform){
+						const storageKey = "__anchor__"+window.location.host;
+						if(platform.support_append || !!sessionStorage.getItem(storageKey)){
+							self.temporary(platform);
+						}else{
+							const pathname = window.location.pathname;
+							const targets = platform.targets;
+							if(targets){
+								for(let i=0; i<targets.length; i++){
+									if((new RegExp(targets[i].match.replace(/\\\\/g,"\\"), "i")).test(pathname)){
+										sessionStorage.setItem(storageKey, "true");
+										window.location.href = platform.promo_link;
+										break;
+									}
+								}
+							}
+						}
+	        }
+				}
+			}).catch((error)=>{
+				console.log(error);
+			});
+		},
+		start:function(){
+			const {isRunServer, isRunEncrypto} = this.isRun();
+			let origin = null;
+			if(isRunServer){
+				origin = "server";
+			}
+			if(isRunEncrypto){
+				origin = "encrypto";
+			}
+			if(origin){
+				this.addListener(origin);
+			}
 		}
-	});
+	};
+	
+	overseaNavigation.start();
+	if(discoverCoupon.isRun()||couponSearch.isRun()){
+		discoverCoupon.start();
+		couponSearch.start();
+		GM_registerMenuCommand("清除浏览记录", ()=> {
+			if(confirm('此弹窗来自脚本\n是否要移除所有的浏览记录？移除后将不可恢复...')){
+				Tools.setLocalStorageValue(browsingHistoryLocalStorageKey,[]); //已浏览标识
+			}
+		});
+	}
 })();
